@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%block title%}home{%endblock%}
+{%block content%}
+<!--<div class="row">
+    <div class="col-md-4 offset-md-4 my-auto">-->
+        <div class="card m-5">
+            <div class="shadow card-body">
+                <h2 style="text-align: center;">Modifier un etudiant</h2>
+                <form action="/update/{{etudiant.matricule}}" method="POST">
+                    <div class="form-row">
+                    <div class="form-group">
+                        <label>Matricule</label>
+                        <input type="number" name="matricule" placeholder="matricule" class="form-control" autofocus value="{{etudiant.matricule}}" readonly>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" name="nom" placeholder="nom" class="form-control"  value="{{etudiant.nom}}" autofocus>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Prenom</label>
+                        <input type="text" name="prenom" placeholder="prenom" class="form-control"  value="{{etudiant.prenom}}" autofocus>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Fillière</label>
+                        <input type="text" name="filliere" placeholder="filliere" class="form-control" value="{{etudiant.filliere}}" autofocus>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Niveau D'Etude</label>
+                        <input type="text" name="niveau" placeholder="niveau d'etude" class="form-control" value="{{etudiant.niveau}}" autofocus>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Salle D'Examen</label>
+                        <input type="text" name="salle" placeholder="salle d'examan" class="form-control" value="{{etudiant.salle}}" autofocus>
+                    </div>
+                </div>
+                <br>
+                    <button type="submit" class="btn btn-outline-success float-right">Ajouter</button>
+                
+                </form>
+
+            </div>
+            </div>
+            
+
+
+
+
+{%endblock%}

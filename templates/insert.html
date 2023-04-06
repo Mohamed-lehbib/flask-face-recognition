@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+{%block title%}home{%endblock%}
+{%block content%}
+<!--<div class="row">
+    <div class="col-md-4 offset-md-4 my-auto">-->
+        <div class="card m-5">
+            <div class="shadow card-body">
+                <h2 style="text-align: center;">Ajouter un etudiant</h2>
+                <p>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                         <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+                </p>
+                <form action="/create" method="POST" enctype="multipart/form-data">
+                    <div class="form-row">
+                    <div class="form-group">
+                        <label>Matricule</label>
+                        <input type="number" name="matricule" placeholder="matricule" class="form-control" autofocus required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" name="nom" placeholder="nom" class="form-control" autofocus required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Prenom</label>
+                        <input type="text" name="prenom" placeholder="prenom" class="form-control" autofocus required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Fillière</label>
+                        <input type="text" name="filliere" placeholder="filliere" class="form-control" autofocus required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Niveau D'Etude</label>
+                        <input type="text" name="niveau" placeholder="niveau d'etude" class="form-control" autofocus required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Salle D'Examen</label>
+                        <input type="text" name="salle" placeholder="salle d'examan" class="form-control" autofocus required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="file" name="file" class="form-control" required>
+                    </div>
+                </div>
+
+                <br>
+                    <button type="submit" class="btn btn-outline-success float-right">Ajouter</button>
+                
+                </form>
+
+            </div>
+            </div>
+            
+
+
+
+
+{%endblock%}

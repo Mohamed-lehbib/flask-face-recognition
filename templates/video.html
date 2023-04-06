@@ -1,0 +1,49 @@
+{% extends 'base.html'%} {% block content %}
+
+<!--<h1 style="color:black;text-align: center;">Face Detection </h1>-->
+<div style="justify-content: center; display:flex;"><img src="{{ url_for('video_feed') }}"></div>
+<div class="jumbotron p-3">
+    <div class="card m-5">
+            <div class="shadow card-body">
+    
+      
+    <br>
+    <!--<table class="table table-hover table-light">
+        <tr>
+            <th>matricule</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>fillière</th>
+            <th>niveau d'etude</th>
+            <th>Salle d'examen</th>
+        </tr>
+        {%for etudiant in etudiants%}
+        <tr>
+          
+          <td>{{etudiant.matricule}}</td>
+          <td>{{etudiant.nom}}</td> 
+          <td>{{etudiant.prenom}}</td> 
+          <td>{{etudiant.filliere}}</td> 
+          <td>{{etudiant.niveau}}</td> 
+          <td>{{etudiant.salle}}</td>
+          
+          
+        </tr>
+        {%endfor%} 
+    </table>-->
+    {%for etudiant in etudiants%}
+    <form action="/index" method="POST">
+      <input type ="number" value="{{etudiant.matricule}}" readonly>
+      <input type ="text" value="{{etudiant.nom}}" readonly>
+      <input type ="text" value="{{etudiant.prenom}}" readonly>
+      <input type ="text" value="{{etudiant.filliere}}" readonly>
+      <input type ="text" value="{{etudiant.niveau}}" readonly>
+      <input type ="text" value="{{etudiant.salle}}" readonly>
+    </form>
+    {%endfor%}
+  </div>
+  </div>
+  </div>
+
+
+{% endblock %}

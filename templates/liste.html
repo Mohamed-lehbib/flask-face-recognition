@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%block title%}home{%endblock%}
+{%block content%}
+
+  <div class="jumbotron p-3">
+    <div class="card m-5">
+            <div class="shadow card-body">
+    <h1 align="center">Liste des Etudiants</h1>
+    <br>
+
+    <a href="{{url_for('insert')}}">
+      <button class='btn btn-outline-info float-right'> <i class='fa fa-user-plus'></i> Ajouter un etudiant </button> 
+    </a>
+      
+    <br>
+    <table class="table table-hover table-light">
+        <tr>
+            <th>matricule</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>fillière</th>
+            <th>niveau d'etude</th>
+            <th>Salle d'examen</th>
+            <th>Action</th>
+        </tr>
+        {%for etudiant in etudiants%}
+        <tr>
+          
+          <td>{{etudiant.matricule}}</td>
+          <td>{{etudiant.nom}}</td> 
+          <td>{{etudiant.prenom}}</td> 
+          <td>{{etudiant.filliere}}</td> 
+          <td>{{etudiant.niveau}}</td> 
+          <td>{{etudiant.salle}}</td> 
+          <!--<td>
+            <a href="" class="btn btn-danger btn-sm">delete</a>
+            <a href="" class="btn btn-success btn-sm">modifier</a>
+          </td>-->
+          <td>
+            <a href="update/{{etudiant.matricule}}">
+            <font color ="black"><button class="btn btn-outline-success"> <i class='fa fa-edit'></i> </button></font></a>
+            <a href="delete/{{etudiant.matricule}}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer  ?')">
+            <font color ="black"><button class="btn btn-outline-danger float-left"> <i class='fa fa-trash'></i> </button></font></a>
+          </td>
+          
+      </tr>
+      {%endfor%}
+    </table>
+  </div>
+  </div>
+  </div>
+
+{%endblock%}

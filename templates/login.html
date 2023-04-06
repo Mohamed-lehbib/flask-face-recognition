@@ -1,0 +1,35 @@
+{%extends 'home.html'%}
+{%block title%}Login{%endblock%}
+{%block content%}
+<br>
+<br>
+    <div class="card m-5">
+        <div class="shadow card-body">
+          
+              <h2 class="d-flex justify-content-center">Se connecter</h2>
+              <form action="" method="post" autocomplete="off">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label>Nom d'utilisateur</label>
+                    {{ form.username(class="form-control") }}
+                    <!--<input type="text" name="username"  class="form-control" >-->
+                    <span class="invalid-feedback"></span>
+                </div>    
+                <br>
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    {{ form.password(class="form-control") }}
+                    <!--<input type="password" name="password" class="form-control">-->
+                    <span class="invalid-feedback"></span>
+                </div>
+                <!--<div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>-->
+                <br>
+                {{ form.submit(class="btn btn-outline-success float-right") }}
+                <!--<button type="submit" class="btn btn-outline-success float-right"> connecter </button>-->
+                <p>Vous avez pas de compte ? <a href="{{url_for('register')}}">S'inscrire</a>.</p>
+            </form>
+        </div>
+        
+{%endblock%}
