@@ -2,3 +2,7 @@
 .vscode
 #to ignore image
 student_images/14662
+#DS_STORE
+.DS_STORE
+#env
+env/
