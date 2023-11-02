@@ -67,14 +67,14 @@ git remote remove origin
 ```
 
 
-- step 6: create ur own remote repository and get the url of the repository to add it to the project
+- step 7: create ur own remote repository and get the url of the repository to add it to the project
 
 ```
 #to setup ur remote repository for this project
 git remote add origin <your_repo_url>
 ```
 
-- step 7: push the project to ur remote repository
+- step 8: push the project to ur remote repository
 
 ```
 #to push the project and use "main" instead of "master" if that's your branch name
