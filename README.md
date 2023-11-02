@@ -59,6 +59,14 @@ git add .
 git commit -m "commit message"
 ```
 
+- step 6: remove the remote repository connected to the project
+
+```
+#to delete the link to the remote repo
+git remote remove origin
+```
+
+
 - step 6: create ur own remote repository and get the url of the repository to add it to the project
 
 ```
